@@ -18,7 +18,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
     // Формируем красивое сообщение для Discord
     const discordMessage = {
         embeds: [{
-            title: "📢 Новая заявка на SMP сервер!",
+            title: "📢 Новая заявка!",
             color: 5025616, // Зеленый цвет полоски
             fields: [
                 { name: "Игровой ник", value: nickname, inline: true },
@@ -37,14 +37,14 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = "✅ Заявка успешно отправлена! Ожидайте ответа.";
+            statusMessage.innerText = "✅ Заявка успешно отправлена!";
             statusMessage.className = "success";
             document.getElementById('smpForm').reset(); // Очищаем форму
         } else {
             throw new Error();
         }
     } catch (error) {
-        statusMessage.innerText = "❌ Ошибка отправки. Проверьте вебхук или попробуйте позже.";
+        statusMessage.innerText = "❌ Ошибка отправки.";
         statusMessage.className = "error";
     }
 });

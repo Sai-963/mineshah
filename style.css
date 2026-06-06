@@ -83,3 +83,27 @@ button:hover {
 .hidden { display: none; }
 .success { color: #4caf50; margin-top: 15px; font-weight: bold; }
 .error { color: #f44336; margin-top: 15px; font-weight: bold; }
+
+.discord-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #5865F2;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+}
+
+.discord-btn:hover {
+    transform: translateY(-3px);
+    background-color: #4752c4;
+    box-shadow: 0 8px 25px rgba(88, 101, 242, 0.6);
+}
