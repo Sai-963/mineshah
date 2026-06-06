@@ -1,25 +1,32 @@
-// Настройка копирования IP по клику
+// Копирование IP по клику
 document.querySelector('.ip').addEventListener('click', function() {
-    navigator.clipboard.writeText(this.innerText);
-    alert('IP сервера скопирован в буфер обмена!');
+    const originalText = this.innerText;
+    navigator.clipboard.writeText(originalText);
+    this.innerText = "✨ Скопировано! ✨";
+    this.style.color = "#10b981";
+    setTimeout(() => {
+        this.innerText = originalText;
+        this.style.color = "";
+    }, 2000);
 });
 
 // Обработка формы заявки
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS"; // Вставьте сюда ссылку!
+    // ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНЫЙ ВЕБХУК ИЗ ДИСКОРДА!
+    const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS"; 
 
     const nickname = document.getElementById('nickname').value;
     const age = document.getElementById('age').value;
     const about = document.getElementById('about').value;
     const statusMessage = document.getElementById('statusMessage');
 
-    // Формируем красивое сообщение для Discord
+    // Красивая карточка сообщения для Discord
     const discordMessage = {
         embeds: [{
-            title: "📢 Новая заявка!",
-            color: 5025616, // Зеленый цвет полоски
+            title: "📢 Новая заявка на сервер!",
+            color: 5025616, // Зеленый цвет полоски в ДС
             fields: [
                 { name: "Игровой ник", value: nickname, inline: true },
                 { name: "Возраст", value: age, inline: true },
@@ -37,9 +44,9 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = "✅ Заявка успешно отправлена!";
+            statusMessage.innerText = "✅ Заявка успешно отправлена! Ожидайте ответа.";
             statusMessage.className = "success";
-            document.getElementById('smpForm').reset(); // Очищаем форму
+            document.getElementById('smpForm').reset(); // Очищаем поля формы
         } else {
             throw new Error();
         }
