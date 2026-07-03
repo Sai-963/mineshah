@@ -14,7 +14,7 @@ document.querySelector('.ip').addEventListener('click', function() {
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // Рабочая ссылка через прокси для обхода блокировки Discord в РФ
+    // ВСТАВЬТЕ СЮДА СВОЮ ОРИГИНАЛЬНУЮ ССЫЛКУ ИЗ ДИСКОРДА (с discord.com):
     const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS";
 
     const nickname = document.getElementById('nickname').value;
@@ -50,7 +50,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
 
             // Ждем 2 секунды (2000 мс) и перекидываем на сервер Discord
             setTimeout(() => {
-                window.location.href = "https://discord.gg/ZpeTwQwtU";
+                window.location.href = "https://discord.gg";
             }, 2000);
         } else {
             throw new Error();
