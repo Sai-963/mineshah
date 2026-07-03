@@ -15,7 +15,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
     e.preventDefault();
 
     // ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНЫЙ ВЕБХУК ИЗ ДИСКОРДА!
-    const webhookUrl = "https://discord.com";
+    const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS";
 
     const nickname = document.getElementById('nickname').value;
     const age = document.getElementById('age').value;
