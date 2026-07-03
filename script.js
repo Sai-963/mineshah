@@ -14,8 +14,8 @@ document.querySelector('.ip').addEventListener('click', function() {
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // ВСТАВЬТЕ СЮДА СВОЮ ОРИГИНАЛЬНУЮ ССЫЛКУ ИЗ ДИСКОРДА (с discord.com):
-    const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS";
+    // ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНЫЙ ВЕБХУК ИЗ ДИСКОРДА!
+    const webhookUrl = "https://discord.com";
 
     const nickname = document.getElementById('nickname').value;
     const age = document.getElementById('age').value;
@@ -44,14 +44,9 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = "✅ Заявка успешно отправлена! Перенаправление...";
+            statusMessage.innerText = " Заявка успешно отправлена! Ожидайте ответа.";
             statusMessage.className = "success";
-            document.getElementById('smpForm').reset(); // Очищаем форму
-
-            // Ждем 2 секунды (2000 мс) и перекидываем на сервер Discord
-            setTimeout(() => {
-                window.location.href = "https://discord.gg";
-            }, 2000);
+            document.getElementById('smpForm').reset(); // Очищаем поля формы
         } else {
             throw new Error();
         }
