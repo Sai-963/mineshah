@@ -14,7 +14,7 @@ document.querySelector('.ip').addEventListener('click', function() {
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНЫЙ ВЕБХУК ИЗ ДИСКОРДА!
+    // Точная и правильная ссылка на твой вебхук
     const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS";
 
     const nickname = document.getElementById('nickname').value;
@@ -22,11 +22,11 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
     const about = document.getElementById('about').value;
     const statusMessage = document.getElementById('statusMessage');
 
-    // Красивая карточка сообщения для Discord
+    // Карточка сообщения для Discord
     const discordMessage = {
         embeds: [{
             title: "📬 Новая заявка на сервер!",
-            color: 5025616, // Зеленый цвет полоски в ДС
+            color: 5025616,
             fields: [
                 { name: "Игровой ник", value: nickname, inline: true },
                 { name: "Возраст", value: age, inline: true },
@@ -44,9 +44,14 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = " Заявка успешно отправлена! Ожидайте ответа.";
+            statusMessage.innerText = "✅ Заявка успешно отправлена! Перенаправление...";
             statusMessage.className = "success";
-            document.getElementById('smpForm').reset(); // Очищаем поля формы
+            document.getElementById('smpForm').reset();
+
+            // Перекидываем в ДС через 2 секунды
+            setTimeout(() => {
+                window.location.href = "https://discord.gg";
+            }, 2000);
         } else {
             throw new Error();
         }
@@ -55,3 +60,4 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         statusMessage.className = "error";
     }
 });
+
