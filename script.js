@@ -14,8 +14,8 @@ document.querySelector('.ip').addEventListener('click', function() {
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ РЕАЛЬНЫЙ ВЕБХУК ИЗ ДИСКОРДА!
-    const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS"; 
+    // Рабочая ссылка через прокси для обхода блокировки Discord в РФ
+    const webhookUrl = "https://discord.com.ru";
 
     const nickname = document.getElementById('nickname').value;
     const age = document.getElementById('age').value;
@@ -25,7 +25,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
     // Красивая карточка сообщения для Discord
     const discordMessage = {
         embeds: [{
-            title: "📢 Новая заявка на сервер!",
+            title: "📬 Новая заявка на сервер!",
             color: 5025616, // Зеленый цвет полоски в ДС
             fields: [
                 { name: "Игровой ник", value: nickname, inline: true },
@@ -44,10 +44,14 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = "✅ Заявка успешно отправлена! Ожидайте ответа.";
+            statusMessage.innerText = "✅ Заявка успешно отправлена! Перенаправление...";
             statusMessage.className = "success";
-            document.getElementById('smpForm').reset(); // Очищаем поля формы
+            document.getElementById('smpForm').reset(); // Очищаем форму
 
+            // Ждем 2 секунды (2000 мс) и перекидываем на сервер Discord
+            setTimeout(() => {
+                window.location.href = "https://discord.gg/ZpeTwQwtU";
+            }, 2000);
         } else {
             throw new Error();
         }
