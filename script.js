@@ -14,7 +14,7 @@ document.querySelector('.ip').addEventListener('click', function() {
 document.getElementById('smpForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // Точная и правильная ссылка на твой вебхук
+    // Ссылка на твой вебхук
     const webhookUrl = "https://discord.com/api/webhooks/1512757947233599589/VSHqFeAxwx5frk-KpbIcaA9ZXWtR5Kim2zKlGWYbQFfA_ubghALklaYwG0wX6cMDaHYS";
 
     const nickname = document.getElementById('nickname').value;
@@ -48,9 +48,9 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
             statusMessage.className = "success";
             document.getElementById('smpForm').reset();
 
-            // Перекидываем в ДС через 2 секунды
+            // Перекидываем на твой сервер Discord через 2 секунды
             setTimeout(() => {
-                window.location.href = "https://discord.gg";
+                window.location.href = "https://discord.gg/yDPxnetfz";
             }, 2000);
         } else {
             throw new Error();
@@ -60,4 +60,3 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         statusMessage.className = "error";
     }
 });
-
