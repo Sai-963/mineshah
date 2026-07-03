@@ -25,7 +25,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
     // Карточка сообщения для Discord
     const discordMessage = {
         embeds: [{
-            title: "📬 Новая заявка на сервер!",
+            title: "📢 Новая заявка на сервер!",
             color: 5025616,
             fields: [
                 { name: "Игровой ник", value: nickname, inline: true },
@@ -44,7 +44,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
         });
 
         if (response.ok) {
-            statusMessage.innerText = "✅ Заявка успешно отправлена! Перенаправление...";
+            statusMessage.innerText = "✅ Заявка успешно отправлена!";
             statusMessage.className = "success";
             document.getElementById('smpForm').reset();
 
