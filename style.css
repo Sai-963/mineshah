@@ -1,7 +1,7 @@
 body {
-    /* Красивый глубокий бирюзовый градиент на фоне */
-    background: linear-gradient(135deg, #0d5c55 0%, #111827 100%);
-    background-attachment: fixed; /* Фиксируем фон при прокрутке */
+    /* Насыщенный бирюзовый фон с эффектом мягкого матового шума */
+    background: radial-gradient(circle at center, #0f766e 0%, #042f2e 100%);
+    background-attachment: fixed;
     
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
 /* Создаем матовый стеклянный слой поверх градиента */
