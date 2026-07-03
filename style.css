@@ -1,7 +1,7 @@
 body {
-    /* Насыщенный бирюзовый фон с эффектом мягкого матового шума */
-    background: radial-gradient(circle at center, #0f766e 0%, #042f2e 100%);
-    background-attachment: fixed;
+    /* Чистый, глубокий бирюзовый градиент на весь экран */
+    background: radial-gradient(circle at center, #0b665e 0%, #031c1a 100%) no-repeat center center fixed;
+    background-size: cover;
     
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,20 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Создаем матовый стеклянный слой поверх градиента */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 118, 110, 0.15); /* Бирюзовая дымка */
-    backdrop-filter: blur(15px); /* Размытие для эффекта матового стекла */
-    -webkit-backdrop-filter: blur(15px);
-    z-index: -1; /* Прячем слой под контент сайта */
 }
 
 header {
