@@ -47,9 +47,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
             statusMessage.innerText = "✅ Заявка успешно отправлена! Ожидайте ответа.";
             statusMessage.className = "success";
             document.getElementById('smpForm').reset(); // Очищаем поля формы
-                
-            // ДОБАВЬТЕ ЭТУ СТРОКУ (замените ссылку на ваше приглашение):
-            window.location.href = "https://discord.gg/ZpeTwQwtU; 
+
         } else {
             throw new Error();
         }
