@@ -50,7 +50,7 @@ document.getElementById('smpForm').addEventListener('submit', async function(e) 
 
             // Перекидываем на твой сервер Discord через 2 секунды
             setTimeout(() => {
-                window.location.href = "https://discord.gg/yDPxnetfz";
+                window.location.href = "https://discord.gg/ywykZjh5p";
             }, 2000);
         } else {
             throw new Error();
